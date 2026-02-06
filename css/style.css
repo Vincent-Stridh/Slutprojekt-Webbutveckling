@@ -1,0 +1,40 @@
+#wrapper {
+  display: grid;
+  background-color:lightgray;
+  grid-template-areas: 
+  "hd hd hd hd"
+  "pl mp mp p1"
+  "pl sn sn p1"
+  "pl sn sn p2"
+  "ft ft ft ft";
+}
+
+#header {
+  grid-area: hd;
+  font-size: 1.5rem;
+  border: 1px solid brown;
+}
+#links {
+  color: yellow;
+}
+#sokbar {
+  border: black;
+}
+
+#section {
+  grid-area: sn;
+  grid-template-areas: 
+  "s1"
+  "s2";
+  border: 1px solid red;
+}
+#section1 {
+  grid-area: s1;
+  font-size: 2rem;
+  border: 1px solid blue;
+}
+#section2 {
+  grid-area: s2;
+  font-size: 1rem;
+  border: 1px solid green;
+}
