@@ -109,6 +109,7 @@
   overflow: hidden;
   align-items: center;
   justify-content: center;
+  max-height: 75vh;
 }
 #pic1 img{
   object-fit: cover;
@@ -122,6 +123,7 @@
   overflow: hidden;
   align-items: center;
   justify-content: center;
+  min-height: 75vh;
 }
 #pic2 img{
   object-fit: cover;
