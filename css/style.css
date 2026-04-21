@@ -19,6 +19,7 @@
 }
 
 #header {
+  height: 8vh;
   display: grid;
   grid-area: hd;
   font-size: 1.5rem;
@@ -197,6 +198,45 @@
 /*home.html*/
 
 #homewrapper {
+  display: grid;
+  background-color: var(--wrapper-basics);
+  height: 180vh;
+  grid-template-columns: 0.4fr repeat(2, 1fr) 0.8fr;
+  grid-template-rows: 0.75fr repeat(5, 1fr) 0.8fr;
+  grid-template-areas: 
+  "hd hd hd hd"
+}
+
+/*ContactUs.html*/
+
+#contactswrapper {
+  display: grid;
+  background-color: var(--wrapper-basics);
+  height: 90vh;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 0.75fr repeat(2, 1fr);
+  grid-template-areas: 
+  "hd hd"
+  "t1 t2"
+  "t3 t4"
+}
+
+#textbox1{grid-area: t1;}#textbox2{grid-area: t2;}#textbox3{grid-area: t3;}#textbox4{grid-area: t4;}
+#textbox1, #textbox2, #textbox3, #textbox4 {
+  background-image: url(../img/corkbackground.jpg);
+  background-color: rgba(210, 180, 140, 0.5);
+  padding: 30px;
+  border-radius: 20px;
+  margin: 30px;
+  border: 5px gray solid;
+  background-position: center;
+  background-size: cover;
+}
+
+
+/*AboutUs.html*/
+
+#aboutuswrapper {
   display: grid;
   background-color: var(--wrapper-basics);
   height: 180vh;
