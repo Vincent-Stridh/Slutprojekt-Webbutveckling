@@ -223,7 +223,7 @@
 
 #textbox1{grid-area: t1;}#textbox2{grid-area: t2;}#textbox3{grid-area: t3;}#textbox4{grid-area: t4;}
 #textbox1, #textbox2, #textbox3, #textbox4 {
-  background-image: url(../img/corkbackground.jpg);
+  background-image: url(../img/corkbackground2.jpg);
   background-color: rgba(210, 180, 140, 0.5);
   padding: 30px;
   border-radius: 20px;
@@ -231,6 +231,10 @@
   border: 5px gray solid;
   background-position: center;
   background-size: cover;
+  color: rgb(221, 57, 57);
+  font-size: 1.4rem;
+  font-weight: 550;
+  font-family: roboto;
 }
 
 
