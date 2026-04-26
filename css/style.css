@@ -214,7 +214,7 @@
   background-color: var(--wrapper-basics);
   height: 90vh;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 0.75fr repeat(2, 1fr);
+  grid-template-rows: 0.75fr repeat(2, 1fr) 0.8fr;
   grid-template-areas: 
   "hd hd"
   "t1 t2"
@@ -225,16 +225,20 @@
 #textbox1, #textbox2, #textbox3, #textbox4 {
   background-image: url(../img/corkbackground2.jpg);
   background-color: rgba(210, 180, 140, 0.5);
+  background-position: center;
+  background-size: cover;
+  color: rgb(255, 255, 255);
+  font-size: 1.4rem;
+}
+
+#textbox1, #textbox2, #textbox3, #textbox4, #abouttext{
   padding: 30px;
   border-radius: 20px;
   margin: 30px;
-  border: 5px gray solid;
-  background-position: center;
-  background-size: cover;
-  color: rgb(221, 57, 57);
-  font-size: 1.4rem;
+  border: 5px rgb(128, 128, 128) solid;
   font-weight: 550;
   font-family: roboto;
+  font-size: 1.1rem;
 }
 
 
@@ -243,9 +247,17 @@
 #aboutuswrapper {
   display: grid;
   background-color: var(--wrapper-basics);
-  height: 180vh;
-  grid-template-columns: 0.4fr repeat(2, 1fr) 0.8fr;
-  grid-template-rows: 0.75fr repeat(5, 1fr) 0.8fr;
+  height: 100vh;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.75fr repeat(2, 1fr) 0.8fr;
   grid-template-areas: 
-  "hd hd hd hd"
+  "hd"
+  "txt"
+  "txt"
+}
+
+#abouttext{
+  grid-area: txt;
+  background-color: maroon;
+  color: white;
 }
