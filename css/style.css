@@ -31,6 +31,13 @@
   grid-template-rows: 1fr;
   grid-template-areas: "links links sokbar";
 }
+#burger {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
 #links a{color: rgb(359, 80, 52); justify-self: center;}
 #links {
   grid-area: links;
@@ -93,8 +100,8 @@
 }
 #section1 {
   grid-area: s1;
-  font-size: 2rem;
-  padding: 1.5% 0 0 2%;
+  font-size: 3rem;
+  padding: 3% 0 0 4%;
   /*border: 4px solid blue;*/
 }
 #section2 {
@@ -106,7 +113,7 @@
 
 #pic1{
   grid-area: p1;
-  border: 4px dotted rgb(49, 173, 161);
+  border: 7px solid gray;
   overflow: hidden;
   align-items: center;
   justify-content: center;
@@ -120,7 +127,8 @@
 }
 #pic2{
   grid-area: p2;
-  border: 4px dotted darkred;
+  border: 7px solid gray;
+  border-top: 0;
   overflow: hidden;
   align-items: center;
   justify-content: center;
@@ -136,7 +144,7 @@
 #footer {
   grid-area: ft;
   background-color: rgb(92, 92, 92);
-  border: 4px solid hotpink;
+  border: 4px solid rgb(54, 54, 54);
   color: white;
   padding: 2.5% 5% 0 0%;
   text-align: right;
@@ -148,6 +156,97 @@
 }
 
 .active{font-weight: bolder;}
+
+
+/*home.html*/
+
+#homewrapper {
+  display: grid;
+  background-color: var(--wrapper-basics);
+  height: 180vh;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 0.75fr 1fr 0.8fr;
+  grid-template-areas: 
+  "hd hd"
+  "text img"
+  "text sd"
+}
+
+#homeimage{
+  grid-area: img;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  border: 5px rgb(128, 128, 128) solid;
+  object-fit: cover;
+  object-position:center;
+  background-repeat: no-repeat;
+  scale: 90%;
+  border-radius: 20px;
+  margin: 0px;
+}
+
+#hometext{
+  grid-area: text;
+  background-color: bisque;
+}
+
+
+/*ContactUs.html*/
+
+#contactswrapper {
+  display: grid;
+  background-color: var(--wrapper-basics);
+  height: 90vh;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 0.75fr repeat(2, 1fr) 0.8fr;
+  grid-template-areas: 
+  "hd hd"
+  "t1 t2"
+  "t3 t4"
+}
+
+#textbox1{grid-area: t1;}#textbox2{grid-area: t2;}#textbox3{grid-area: t3;}#textbox4{grid-area: t4;}
+#textbox1, #textbox2, #textbox3, #textbox4 {
+  background-image: url(../img/corkbackground2.jpg);
+  background-color: rgba(210, 180, 140, 0.5);
+  background-position: center;
+  background-size: cover;
+  color: rgb(255, 255, 255);
+  font-size: 1.4rem;
+}
+
+#textbox1, #textbox2, #textbox3, #textbox4, #abouttext, #hometext{
+  padding: 30px;
+  border-radius: 20px;
+  margin: 30px;
+  border: 5px rgb(128, 128, 128) solid;
+  font-weight: 550;
+  font-family: roboto;
+  font-size: 1.1rem;
+}
+
+
+/*AboutUs.html*/
+
+#aboutuswrapper {
+  display: grid;
+  background-color: var(--wrapper-basics);
+  height: 90vh;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.75fr repeat(1, 1fr) 0.8fr;
+  grid-template-areas: 
+  "hd"
+  "txt"
+  "txt"
+}
+
+#abouttext{
+  grid-area: txt;
+  background-color: maroon;
+  color: white;
+}
+
 
 @media screen and (max-width: 650px){
   #wrapper {
@@ -182,6 +281,31 @@
   #sokbar{margin-right: 0;}
   .mobile-line_break {display: inline}
   #footer{padding: 4% 6% 0 0%;}
+  #aboutuswrapper {grid-template-rows: 0.75fr 5fr; height: 150vh;}
+  #homewrapper {grid-template-rows: 0.75fr 2fr 0.2fr; grid-template-areas:"hd""img""text"; grid-template-columns: 1fr;}
+   #burger {
+    display: block;
+  }
+
+  #links {
+    display: none; /* hidden by default */
+    flex-direction: column;
+    gap: 10px;
+    background-color: rgba(255, 225, 0, 0.9);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+  }
+
+  #links.active {
+    display: flex; /* show when active */
+  }
+
+  #header {
+    position: relative;
+  }
 }
 
 @media screen and (max-width:754px) {
@@ -194,70 +318,4 @@
   #wrapper {
     height: 200vh;
   }
-}
-/*home.html*/
-
-#homewrapper {
-  display: grid;
-  background-color: var(--wrapper-basics);
-  height: 180vh;
-  grid-template-columns: 0.4fr repeat(2, 1fr) 0.8fr;
-  grid-template-rows: 0.75fr repeat(5, 1fr) 0.8fr;
-  grid-template-areas: 
-  "hd hd hd hd"
-}
-
-/*ContactUs.html*/
-
-#contactswrapper {
-  display: grid;
-  background-color: var(--wrapper-basics);
-  height: 90vh;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 0.75fr repeat(2, 1fr) 0.8fr;
-  grid-template-areas: 
-  "hd hd"
-  "t1 t2"
-  "t3 t4"
-}
-
-#textbox1{grid-area: t1;}#textbox2{grid-area: t2;}#textbox3{grid-area: t3;}#textbox4{grid-area: t4;}
-#textbox1, #textbox2, #textbox3, #textbox4 {
-  background-image: url(../img/corkbackground2.jpg);
-  background-color: rgba(210, 180, 140, 0.5);
-  background-position: center;
-  background-size: cover;
-  color: rgb(255, 255, 255);
-  font-size: 1.4rem;
-}
-
-#textbox1, #textbox2, #textbox3, #textbox4, #abouttext{
-  padding: 30px;
-  border-radius: 20px;
-  margin: 30px;
-  border: 5px rgb(128, 128, 128) solid;
-  font-weight: 550;
-  font-family: roboto;
-  font-size: 1.1rem;
-}
-
-
-/*AboutUs.html*/
-
-#aboutuswrapper {
-  display: grid;
-  background-color: var(--wrapper-basics);
-  height: 100vh;
-  grid-template-columns: 1fr;
-  grid-template-rows: 0.75fr repeat(2, 1fr) 0.8fr;
-  grid-template-areas: 
-  "hd"
-  "txt"
-  "txt"
-}
-
-#abouttext{
-  grid-area: txt;
-  background-color: maroon;
-  color: white;
 }
