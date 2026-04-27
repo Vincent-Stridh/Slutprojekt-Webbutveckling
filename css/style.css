@@ -163,13 +163,13 @@
 #homewrapper {
   display: grid;
   background-color: var(--wrapper-basics);
-  height: 180vh;
+  height: 90vh;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 0.75fr 1fr 0.8fr;
   grid-template-areas: 
   "hd hd"
   "text img"
-  "text sd"
+  "sd sd"
 }
 
 #homeimage{
@@ -234,7 +234,7 @@
   background-color: var(--wrapper-basics);
   height: 90vh;
   grid-template-columns: 1fr;
-  grid-template-rows: 0.75fr repeat(1, 1fr) 0.8fr;
+  grid-template-rows: 0.75fr 2fr 0.8fr;
   grid-template-areas: 
   "hd"
   "txt"
